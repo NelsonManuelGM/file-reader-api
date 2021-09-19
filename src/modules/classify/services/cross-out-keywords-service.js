@@ -1,6 +1,6 @@
+import { ReadFile, WriteFile } from '../../filesystem/fs-interface.js'
 import crossOutGenerator from './cross-generator-service.js'
-import { WriteFile, ReadFile } from '../../filesystem/fs-interface.js'
-
+import * as ph from 'path';
 /**
  * 
  * @param {String} path 
@@ -10,12 +10,26 @@ import { WriteFile, ReadFile } from '../../filesystem/fs-interface.js'
 export default async function crossOutKeywords(path, keywords) {
     let fileData = await ReadFile(path)
 
-    keywords.forEach(k => {
-        console.log('cross out string per keyword: ', crossOutGenerator(k.length))
-        console.log('keyword: ', k)
-        fileData = String(fileData).replace(k, crossOutGenerator(k.length))
+    keywords.forEach(keyword => {
+        //FOR DEBUG PURPOSE!
+        // console.log('cross out string per keyword: ',
+        //     crossOutGenerator(keyword.length))
+        // console.log('keyword: ', keyword)
+        fileData = String(fileData).replace(
+            keyword,
+            crossOutGenerator(keyword.length)
+        )
     })
 
+    //change name ej: doc.txt to: doc_edited.txt
+    const baseName = ph.basename(path)
+    const pointIndex = baseName.indexOf('.')
+    let newName = baseName.slice(0, pointIndex) + '.' + process.env.CLASSIFIED_ADDON + '.txt'
 
-    await WriteFile(path, fileData)
+    let newPath = ph.dirname(path) + '/' + newName
+
+    //write new crossed out file
+    await WriteFile(newPath, fileData)
+
+    return newName;
 }

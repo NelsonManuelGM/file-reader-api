@@ -26,13 +26,14 @@ export default async function classifyController(req, res) {
     //save
     const path = await saveFileService(documentName, buffer)
 
+    
     //cross out info
-    await crossOutKeywords(path, keywords)
+    const newDocumentName = await crossOutKeywords(path, keywords)
 
     //return
     const baseURL = `http://${req.headers.host}/document/`
 
-    return res.status(200).json({ "document": baseURL + documentName})
+    return res.status(200).json({ "document": baseURL + newDocumentName})
 }
 
 
