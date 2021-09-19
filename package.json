@@ -2,11 +2,11 @@
   "name": "document-classifier",
   "version": "1.0.0",
   "description": "to classify documents",
-  "main": "./src/main.js",
+  "main": "main.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/main.js"
+    "start": "nodemon main.js"
   },
   "author": "",
   "license": "UNLICENSED",
