@@ -1,5 +1,7 @@
 import express from 'express';
+import path from 'path';
 import { config } from 'dotenv';
+import { fileURLToPath } from 'url';
 
 import routerToModules from './src/routes.js';
 import { loggerMiddleware } from './src/middleware/logger.js';
@@ -10,12 +12,15 @@ config()
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
+app.use('/document',loggerMiddleware, express.static(path.dirname(fileURLToPath(import.meta.url)) + '\\src\\documents'));
 
-app.use('/api', routerToModules)
+app.use('/api', loggerMiddleware, routerToModules)
 
-
-app.get('/', loggerMiddleware, (req, res) => {
-    res.redirect('/api')
+app.use('*',(req, res) => {
+    res.json({
+        "message":`path ${req.originalUrl} doesn't exist`,
+        "alternatives":["/api","/document"]
+    }).status(404)
 })
 
 

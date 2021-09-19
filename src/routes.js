@@ -14,5 +14,12 @@ router.post('/classify',
     loggerMiddleware,
     classifyController)
 
+router.use('*',(req, res) => {
+    res.json({
+        "message":`path ${req.originalUrl} doesn't exist`,
+        "alternatives":['/api/classify']
+    }).status(404)
+})
+
 
 export default router;
