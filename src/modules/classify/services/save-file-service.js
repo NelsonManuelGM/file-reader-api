@@ -1,9 +1,7 @@
-import {WriteFile} from '../../../interfaces/fs-interface.js'
+import {WriteFile} from '../../filesystem/fs-interface.js'
 
 /**
- * * This implementations can be an external services 
- * * if is use for more that one functionalities or
- * * arranging reasons
+ * Service to save files on documents
  * @param {String} name 
  * @returns {Buffer} data
  */

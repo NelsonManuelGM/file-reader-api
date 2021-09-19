@@ -1,5 +1,5 @@
 /**
- * Generate character to cross out document
+ * * Generate characters to cross out document according to CROSSOUTCHAR global variable
  * @param {Number} length 
  * @param {String | undefined} generator 
  */

@@ -1,5 +1,5 @@
-import crossOutGenerator from '../utils/cross-generator.js'
-import { WriteFile, ReadFile } from '../../../interfaces/fs-interface.js'
+import crossOutGenerator from './cross-generator-service.js'
+import { WriteFile, ReadFile } from '../../filesystem/fs-interface.js'
 
 /**
  * 
