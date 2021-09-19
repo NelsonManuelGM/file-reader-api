@@ -1,7 +1,7 @@
 // import path from 'path';
 import { Buffer } from 'buffer';
 import { promisify } from 'util';
-import { WriteFile, ReadFile } from '../../../utils/fs-interface.js';
+import { WriteFile, ReadFile } from '../../../interfaces/fs-interface.js';
 import processKeywords from '../utils/process-keywords.js'
 import saveFileService from '../services/save-file-service.js'
 import crossOutKeywords from '../services/cross-out-keywords-service.js'

@@ -12,7 +12,7 @@
     let separator = keywords.includes(',') ? ',' : ' '
     let keyword = ''
 
-    if (substring.includes('\"') || substring.includes('\'')) {
+    if (keywords.includes('\"') || keywords.includes('\'')) {
         for (let i = 0; i < String(keywords).length; i++) {
             let val = keywords[i]
 
@@ -36,7 +36,7 @@
         }
     }
     else {
-        keywordArr = keywordArr.concat(substring.trim().split(separator))
+        keywordArr = keywordArr.concat(keywords.trim().split(separator))
     }
 
     return keywordArr
