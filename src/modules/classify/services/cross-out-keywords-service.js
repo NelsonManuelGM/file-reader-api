@@ -11,8 +11,8 @@ export default async function crossOutKeywords(path, keywords) {
     let fileData = await ReadFile(path)
 
     keywords.forEach(k => {
-        console.log(crossOutGenerator(k.length))
-        console.log(k)
+        console.log('cross out string per keyword: ', crossOutGenerator(k.length))
+        console.log('keyword: ', k)
         fileData = String(fileData).replace(k, crossOutGenerator(k.length))
     })
 

@@ -1,7 +1,7 @@
 import crossOutKeywords from '../services/cross-out-keywords-service.js';
 import saveFileService from '../services/save-file-service.js';
 import docPathValidator from '../services/document-validator-service.js';
-import processKeywords from '../utils/process-keywords-service.js';
+import processKeywords from '../services/process-keywords-service.js';
 
 
 /**
