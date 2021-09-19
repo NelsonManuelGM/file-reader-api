@@ -1,4 +1,3 @@
-node_module/
-./src/documents
-
 yarn.lock
+/node_modules
+/src/documents
