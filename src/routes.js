@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import multer from "multer";
 import { loggerMiddleware } from './middleware/logger.js';
-import { classifyController } from './modules/classify/classify-controller.js';
+import classifyController from './modules/classify/controller/classify-controller.js';
 
 
 const router = Router();
