@@ -13,7 +13,7 @@ router.post('/classify',
 
 router.use('*',(req, res) => {
     res.json({
-        "message":`path ${req.originalUrl} doesn't exist`,
+        "error":`path ${req.originalUrl} doesn't exist`,
         "alternatives":['/api/classify']
     }).status(404)
 })

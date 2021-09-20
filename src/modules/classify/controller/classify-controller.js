@@ -14,7 +14,7 @@ export default async function classifyController(req, res) {
     let validator= docPathValidator(req)
     if(validator){
         return res.status(400).json({
-            "message":validator
+            "error":validator
         })
     }
 
