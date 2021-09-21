@@ -1,8 +1,9 @@
-import cors from 'cors';
-import { config } from 'dotenv';
 import express from 'express';
 import path from 'path';
+import cors from 'cors';
+import { config } from 'dotenv';
 import { fileURLToPath } from 'url';
+
 import { loggerMiddleware } from './src/middleware/logger.js';
 import routerToModules from './src/routes.js';
 
@@ -14,9 +15,11 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.use('/document', loggerMiddleware, express.static(path.dirname(fileURLToPath(import.meta.url)) + '\\src\\documents'));
+app.use(loggerMiddleware) //for debug purpose only
 
-app.use('/api', loggerMiddleware, routerToModules)
+app.use('/document', express.static(path.dirname(fileURLToPath(import.meta.url)) + '\\src\\documents'));
+
+app.use('/api', routerToModules)
 
 app.use('*', (req, res) => {
     res.json({
@@ -26,7 +29,7 @@ app.use('*', (req, res) => {
 })
 
 
-app.listen(5500, () => {
+app.listen(process.env.EXPRESS_PORT, () => {
     console.log('Server on on port ' + process.env.EXPRESS_PORT)
 })
 

@@ -1,7 +1,8 @@
 import {WriteFile} from '../../filesystem/fs-interface.js'
 
 /**
- * Service to save files on documents
+ * * Service to save files on the /documents folder
+ * * in order to abstract concerns 
  * @param {String} name 
  * @returns {Buffer} data
  */

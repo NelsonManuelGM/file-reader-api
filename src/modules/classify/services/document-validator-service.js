@@ -1,6 +1,7 @@
 
 /**
- * *This validation could be as long as it could be
+ * * This validation could be as long as it could be
+ * * for more complex apps 
  * service to validate required information
  * @param {request} http request 
  */

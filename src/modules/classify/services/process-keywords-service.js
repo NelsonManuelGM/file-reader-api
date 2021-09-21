@@ -1,7 +1,9 @@
 
 /**
  * * Assuming the keywords restricted to separations by spaces or commas.
- * * and there is not apostrophes like: ..., "Buddhas's Dharma", ...
+ * * Following the exercise order and assuming 
+ * * there is not apostrophes like: ..., "Buddhas's Dharma", ...
+ * * this method validate, extract the keywords from the string
  * @param {String} keywords 
  * @returns {Array<String>} keywords
  */

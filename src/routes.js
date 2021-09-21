@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import multer from "multer";
+
 import classifyController from './modules/classify/controller/classify-controller.js';
 
 const router = Router();
@@ -7,9 +8,7 @@ const router = Router();
 const upload = multer({});
 
 
-router.post('/classify',
-    upload.single('document'),
-    classifyController)
+router.post('/classify', upload.single('document'), classifyController)
 
 router.use('*',(req, res) => {
     res.json({
