@@ -1,4 +1,5 @@
 import fs from 'fs/promises';
+import * as ph from 'path';
 
 /**
  * ! Module FileSystem interaction
@@ -10,9 +11,9 @@ import fs from 'fs/promises';
  * @param {Buffer} data 
  * @returns {void}
  */
-function WriteFile(path, data) {
+async function WriteFile(path, data) {
     try{
-        fs.writeFile(path, data, { encoding: 'utf8' })
+        await fs.writeFile(path, data, { encoding: 'utf8' })
         console.log('file already written!')
     }
     catch(error){
@@ -35,7 +36,18 @@ function ReadFile(path) {
     }
 }
 
+
+/**
+ * 
+ * @param {String} document path 
+ */
+function CreateFile(path){
+    const folderName = ph.dirname(path)
+    fs.mkdir(folderName)
+}
+
 export {
     WriteFile,
-    ReadFile
+    ReadFile,
+    CreateFile
 };
