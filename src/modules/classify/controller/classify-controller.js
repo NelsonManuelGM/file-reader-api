@@ -33,7 +33,10 @@ export default async function classifyController(req, res) {
     //return
     const baseURL = `http://${req.headers.host}/document/`
 
-    return res.status(200).json({ "document": baseURL + newDocumentName})
+    return res.status(200).json({ 
+        "oldDocument": baseURL + documentName,
+        "document": baseURL + newDocumentName
+    })
 }
 
 
