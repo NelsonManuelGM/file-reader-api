@@ -1,5 +1,9 @@
 # **Read-file-api demoing instructions**
 
+Read-file-api is a small app demo that receive a document (*.txt) and a string of keywords to cross out on the document.
+
+Then return the static address from broth (old and new) document.
+
 ## Pull the project from GitHub
 
 ```bash
@@ -8,7 +12,7 @@
 
 ```
 
-## Install dependencies
+## Install dependencies and start
 
 ### if using npm
 
@@ -41,3 +45,5 @@
 ## Considerations
 
 There is an .env file that **_should not be there_**. But it's there for demoing purpose.
+
+The demo was developed to receive **only files .txt** in order to make it simpler.
