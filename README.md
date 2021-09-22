@@ -47,3 +47,5 @@ Then return the static address from broth (old and new) document.
 There is an .env file that **_should not be there_**. But it's there for demoing purpose.
 
 The demo was developed to receive **only files .txt** in order to make it simpler.
+
+As long as GitHub doesn't accept empty folder, The .gitignore file inside /src/document is to persist the folder as a folder for static files.
