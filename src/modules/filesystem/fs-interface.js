@@ -9,11 +9,11 @@ import * as ph from 'path';
  * 
  * @param {String} path 
  * @param {Buffer} data 
- * @returns {void}
+ * @returns {Void}
  */
-async function WriteFile(path, data) {
+function WriteFile(path, data) {
     try{
-        await fs.writeFile(path, data, { encoding: 'utf8' })
+        fs.writeFile(path, data, { encoding: 'utf8' })
         console.log('file already written!')
     }
     catch(error){
@@ -40,6 +40,7 @@ function ReadFile(path) {
 /**
  * 
  * @param {String} document path 
+ * @returns {Void}
  */
 function CreateFile(path){
     const folderName = ph.dirname(path)
