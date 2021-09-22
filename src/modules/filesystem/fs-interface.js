@@ -36,19 +36,7 @@ function ReadFile(path) {
     }
 }
 
-
-/**
- * 
- * @param {String} document path 
- * @returns {Void}
- */
-function CreateFile(path){
-    const folderName = ph.dirname(path)
-    fs.mkdir(folderName)
-}
-
 export {
     WriteFile,
-    ReadFile,
-    CreateFile
+    ReadFile
 };

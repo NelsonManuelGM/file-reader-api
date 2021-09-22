@@ -1,4 +1,4 @@
-import { WriteFile, CreateFile } from '../../filesystem/fs-interface.js'
+import { WriteFile } from '../../filesystem/fs-interface.js'
 
 /**
  * * Service to save files on the /documents folder
@@ -12,13 +12,7 @@ export default async function saveFileService(name, data) {
 
     const path = process.env.DOCUMENT_PATH + name;
 
-    try {
-        await CreateFile(path)
-    }catch(error){
-        console.log(e)
-    }
     await WriteFile(path, _data)
-
 
     return path
 }
