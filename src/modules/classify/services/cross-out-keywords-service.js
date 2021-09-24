@@ -13,13 +13,13 @@ import crossOutGenerator from './cross-generator-service.js'
  */
 export default async function crossOutKeywords(path, keywords) {
     let fileData = await ReadFile(path)
-
+    
     keywords.forEach(keyword => {
         
         //!HELPER FOR DEBUG PURPOSE!
-        // console.log('cross out string per keyword: ',
-        //     crossOutGenerator(keyword.length))
-        // console.log('keyword: ', keyword)
+        console.log('cross out string per keyword: ',
+            crossOutGenerator(keyword.length))
+        console.log('keyword: ', keyword)
         
         fileData = String(fileData).replace(
             keyword,

@@ -7,10 +7,15 @@ import { fileURLToPath } from 'url';
 import { loggerMiddleware } from './src/middleware/logger.js';
 import routerToModules from './src/routes.js';
 
+import corsConfiguration from './src/middleware/cors-middleware-configuration.js'
 
 const app = express();
 config()
+
 app.use(cors())
+
+//CORS CONFIGURATION
+app.use(cors(corsConfiguration))
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
