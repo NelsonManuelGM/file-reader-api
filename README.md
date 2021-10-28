@@ -1,8 +1,9 @@
 # **Read-file-api demoing instructions**
 
-Read-file-api is a small app demo that receive a document (*.txt) and a string of keywords to cross out on the document.
+Read-file-api is a small app demo that receive a document (*.txt) and a string of keywords to cross out on the document. Also return the static address from broth (old and new) document.
 
-Then return the static address from broth (old and new) document.
+Also recieve a chunks and save them.
+
 
 ## Pull the project from GitHub
 
